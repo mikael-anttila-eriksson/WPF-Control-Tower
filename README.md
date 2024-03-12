@@ -1,1 +1,5 @@
-# A5_WPF_v3
+# Control Tower
+Asssignment to showcase:
+* WPF
+* Publisher/subscriber pattern, using Delegates & Events
+
