@@ -1,0 +1,63 @@
+﻿<Window x:Class="A5_WPF_v3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A5_WPF_v3"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        Title="Control Tower" Height="450" Width="800">
+    <!-- SizeToContent - To resize the screen to its content 
+    Also add margin to the lowest elemtents at the buttom 
+    to give the space from the edge -->
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="3" Height="40" Width="760" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="132*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Flight Code" FontSize="17" FontFamily="Pristina" FontWeight="Bold"/>
+                <Label Grid.Column="1" Content="Status" FontSize="18" FontFamily="Monotype Corsiva" />
+                <Label Grid.Column="2" Content="Time" FontSize="18" FontFamily="Juice ITC" FontWeight="Bold"/>
+
+            </Grid>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="3" Height="300" Width="760" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,70,0,0">
+            <Grid>
+                <ListView Name="lstvwGeneral" ToolTip="Flight Information" FontFamily="Bahnschrift" FontSize="16">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn x:Name="FlightCode" DisplayMemberBinding="{Binding FlightCode}" Width="170">
+
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="Status" DisplayMemberBinding="{Binding Status}" Width="300">
+
+                            </GridViewColumn>
+                            <GridViewColumn x:Name="Time" DisplayMemberBinding="{Binding Time}" Width="290">
+
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                    <ListViewItem Content="Texty text"/>
+                </ListView>
+
+            </Grid>
+
+        </Border>
+        <Label Content="Next Fligth:" x:Name="lblNextFligth" BorderBrush="{x:Null}" FontFamily="Cascadia Mono SemiBold" FontSize="17" Height="40" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,379,0,0" Cursor="IBeam"/>
+        <Border BorderBrush="Black" BorderThickness="2" Height="40" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,379,0,15">
+            <TextBox x:Name="txtFlightCode" FontSize="15" VerticalContentAlignment="Center" Text="test" BorderThickness="0" Cursor="IBeam"/>
+        </Border>
+        <Button x:Name="btnSend" Height="40" Width="375"   Margin="400,379,0,15"  
+            Content="Send next Airplane to Runway"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Send_Click">
+        </Button>
+    </Grid>
+</Window>
